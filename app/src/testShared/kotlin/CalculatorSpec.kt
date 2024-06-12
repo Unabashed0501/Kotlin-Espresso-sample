@@ -72,4 +72,26 @@ abstract class CalculatorSpec {
         onView(withId(R.id.button_calc)).perform(click())
         onView(withId(R.id.field)).check(matches(withText("${333 / 100.0}")))
     }
+
+    @Test
+    fun testClearButton() {
+        // Input some numbers and perform a calculation
+        onView(withId(R.id.button_1)).perform(click())
+        onView(withId(R.id.button_2)).perform(click())
+        onView(withId(R.id.button_3)).perform(click())
+        onView(withId(R.id.button_sum)).perform(click())
+        onView(withId(R.id.button_4)).perform(click())
+        onView(withId(R.id.button_5)).perform(click())
+        onView(withId(R.id.button_6)).perform(click())
+        onView(withId(R.id.button_calc)).perform(click())
+
+        // Verify that the result is displayed
+        onView(withId(R.id.field)).check(matches(withText("579"))) // Adjust this expected result as needed
+
+        // Click the AC button
+        onView(withId(R.id.button_all_clear)).perform(click())
+
+        // Verify that the display is cleared (assuming it should be reset to "0")
+        onView(withId(R.id.field)).check(matches(withText("0")))
+    }
 }
