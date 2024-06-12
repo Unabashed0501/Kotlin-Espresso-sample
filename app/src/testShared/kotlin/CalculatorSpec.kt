@@ -83,7 +83,7 @@ abstract class CalculatorSpec {
         onView(withId(R.id.button_4)).perform(click())
         onView(withId(R.id.button_5)).perform(click())
         onView(withId(R.id.button_6)).perform(click())
-        onView(withId(R.id.button_calc)).perform(click())
+        onView(withId(R.id.button_calc))gti.perform(click())
 
         // Verify that the result is displayed
         onView(withId(R.id.field)).check(matches(withText("579"))) // Adjust this expected result as needed
