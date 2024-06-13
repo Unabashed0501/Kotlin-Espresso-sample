@@ -29,4 +29,22 @@ class CalculatorClearButtonTest {
         calculatorPage.clickAc()
         calculatorPage.verifyDisplayIsCleared()
     }
+
+    @Test
+    fun testClearButtonNew() {
+        CalculatorPage()
+            .clickNumberButtons(1, 2, 3)
+            .clickOperatorButton("+")
+            .clickNumberButtons(4, 5, 6)
+            .clickOperatorButton("=")
+
+            // Verify that the result is displayed
+            .verifyResultDisplayed("579")
+
+            // Click the AC button
+            .clickACButton()
+
+            // Verify that the display is cleared
+            .verifyResultDisplayed("0")
+    }
 }
