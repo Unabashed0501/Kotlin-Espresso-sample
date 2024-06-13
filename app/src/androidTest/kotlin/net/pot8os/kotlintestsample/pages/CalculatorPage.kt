@@ -29,15 +29,15 @@ class CalculatorPage : BasePage() {
     fun clickNumberButtons(vararg numbers: Int): CalculatorPage {
         numbers.forEach { number ->
             when (number) {
-                1 -> button1.perform(click())
-                2 -> button2.perform(click())
-                3 -> button3.perform(click())
-                4 -> button4.perform(click())
-                5 -> button5.perform(click())
-                6 -> button6.perform(click())
-                7 -> button7.perform(click())
-                8 -> button8.perform(click())
-                9 -> button9.perform(click())
+                1 -> clickOnView(button1)
+                2 -> clickOnView(button2)
+                3 -> clickOnView(button3)
+                4 -> clickOnView(button4)
+                5 -> clickOnView(button5)
+                6 -> clickOnView(button6)
+                7 -> clickOnView(button7)
+                8 -> clickOnView(button8)
+                9 -> clickOnView(button9)
             }
         }
         return this
@@ -45,17 +45,17 @@ class CalculatorPage : BasePage() {
 
     fun clickOperatorButton(operator: String): CalculatorPage {
         when (operator) {
-            "+" -> buttonAdd.perform(click())
-            "-" -> buttonSub.perform(click())
-            "*" -> buttonMul.perform(click())
-            "/" -> buttonDiv.perform(click())
-            "=" -> buttonCalc.perform(click())
+            "+" -> clickOnView(buttonAdd)
+            "-" -> clickOnView(buttonSub)
+            "*" -> clickOnView(buttonMul)
+            "/" -> clickOnView(buttonDiv)
+            "=" -> clickOnView(buttonCalc)
         }
         return this
     }
 
     fun clickACButton(): CalculatorPage {
-        buttonAc.perform(click())
+        clickOnView(buttonAc)
         return this
     }
 
