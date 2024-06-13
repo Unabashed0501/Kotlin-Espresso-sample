@@ -12,10 +12,6 @@ open class BasePage {
         viewInteraction.perform(ViewActions.click())
     }
 
-    fun enterText(viewInteraction: ViewInteraction, text: String) {
-        viewInteraction.perform(ViewActions.typeText(text))
-    }
-
     fun checkText(viewInteraction: ViewInteraction, text: String) {
         viewInteraction.check(ViewAssertions.matches(ViewMatchers.withText(text)))
     }

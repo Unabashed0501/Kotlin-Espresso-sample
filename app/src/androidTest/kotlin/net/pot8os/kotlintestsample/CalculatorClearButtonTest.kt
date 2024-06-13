@@ -18,16 +18,14 @@ class CalculatorClearButtonTest {
 
     @Test
     fun testClearButton() {
-        // Perform calculations using the page object methods
         calculatorPage.enterNumber123()
         calculatorPage.clickAdd()
         calculatorPage.enterNumber456()
         calculatorPage.clickCalc()
 
         // Verify the result
-        calculatorPage.verifyResult("579") // Adjust this expected result as needed
+        calculatorPage.verifyResult("579")
 
-        // Click the AC button and verify the display is cleared
         calculatorPage.clickAc()
         calculatorPage.verifyDisplayIsCleared()
     }
